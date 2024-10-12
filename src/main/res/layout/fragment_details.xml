@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
@@ -26,7 +26,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Kyiv" />
-
 
             <TextView
                 android:id="@+id/tvCurrentTemp"
@@ -76,7 +75,6 @@
                 app:layout_constraintTop_toBottomOf="@+id/ivImageWeather"
                 tools:text="cloudy" />
 
-
             <ImageView
                 android:id="@+id/ivImageWeather"
                 android:layout_width="110dp"
@@ -86,7 +84,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:tint="@color/black"
                 tools:src="@drawable/w00" />
-
 
             <LinearLayout
                 android:id="@+id/detailsContainer"
@@ -245,10 +242,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvHourly" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 </FrameLayout>
