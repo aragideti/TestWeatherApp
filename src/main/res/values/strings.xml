@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name">TestWeather</string>
-    <string name="api_key">AIzaSyAxIZRwYlQiMekOdpt726JvhHBX-J2--5E</string>
+    <string name="api_key">*******AIzaSyAxIZRwYlQiMekO*******dpt726JvhHBX-J2--5E*******</string>
     <string name="add_location">+ ADD LOCATION</string>
     <string name="humidity">Humidity</string>
     <string name="pressure">Pressure</string>

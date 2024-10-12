@@ -82,7 +82,8 @@ class HomeFragment : Fragment(), CustomClickListener {
 
     private fun initAutocomplete() {
         if (!Places.isInitialized()) {
-            Places.initialize(requireContext(), getString(R.string.api_key))
+            ///google and github alert
+            Places.initialize(requireContext(), getString(R.string.api_key).replace("*",""))
         }
         val intent = Autocomplete.IntentBuilder(
             AutocompleteActivityMode.OVERLAY,
