@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testweather.data.repository.WeatherRepository
+import com.example.testweather.domain.repository.WeatherRepository
 import com.example.testweather.domain.entity.CurrentWeatherRS
 import com.example.testweather.util.performRequest
 import dagger.hilt.android.lifecycle.HiltViewModel

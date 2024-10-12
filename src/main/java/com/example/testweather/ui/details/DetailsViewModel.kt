@@ -4,7 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.testweather.data.repository.WeatherRepository
+import com.example.testweather.domain.repository.WeatherRepository
 import com.example.testweather.domain.entity.DailyForecastRS
 import com.example.testweather.domain.entity.HourlyForecastRS
 import com.example.testweather.ui.home.HomeViewModel.Companion.DEFAULT_ERROR_MESSAGE
