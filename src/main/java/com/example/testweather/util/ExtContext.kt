@@ -4,8 +4,8 @@ import android.app.AlertDialog
 import android.content.Context
 import com.example.testweather.R
 
-fun Context.loadImage(name: String) {
-    this.resources?.getIdentifier(
+fun Context.loadImage(name: String): Int? {
+    return this.resources?.getIdentifier(
         name,
         "drawable",
         this.packageName

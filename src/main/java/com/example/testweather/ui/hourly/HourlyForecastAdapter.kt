@@ -11,6 +11,7 @@ import com.example.testweather.domain.entity.WeatherItem
 import com.example.testweather.util.DateFormats
 import com.example.testweather.util.DateTimeFormatter
 import com.example.testweather.util.iconMapper
+import com.example.testweather.util.loadImage
 import com.example.testweather.util.roundValue
 
 class HourlyForecastAdapter(
@@ -45,13 +46,7 @@ class HourlyForecastAdapter(
                     root.context.getString(R.string.current_temp, item.main?.temp?.roundValue())
                 ivImageWeather.apply {
                     Glide.with(context)
-                        .load(
-                            context?.resources?.getIdentifier(
-                                item.weather?.first()?.icon?.iconMapper(),
-                                "drawable",
-                                context?.packageName
-                            )
-                        )
+                        .load(context.loadImage(item.weather?.first()?.icon?.iconMapper().orEmpty()))
                         .into(this)
                 }
             }
