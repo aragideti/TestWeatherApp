@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">TestWeather</string>
+    <string name="api_key">AIzaSyAxIZRwYlQiMekOdpt726JvhHBX-J2--5E</string>
+    <string name="add_location">+ ADD LOCATION</string>
+    <string name="humidity">Humidity</string>
+    <string name="pressure">Pressure</string>
+    <string name="wind">Wind</string>
+    <string name="cloud_cover">Cloud cover</string>
+    <string name="humidity_val">%1$s %%</string>
+    <string name="pressure_val">%1$s kPa</string>
+    <string name="wind_val">%1$s m/s</string>
+    <string name="cloud_cover_val">%1$s %%</string>
+    <string name="temp_max">Max: %1$s°</string>
+    <string name="temp_min">Min: %1$s°</string>
+    <string name="current_temp">%1$s°</string>
+    <string name="error">Error</string>
+    <string name="ok">OK</string>
+    <string name="temp_range">%1$s°/%2$s°</string>
+    <string name="fells_like">Fells like: %1$s°</string>
+    <string name="daily_forecast">DAILY FORECAST</string>
+    <string name="hourly_forecast">HOURLY FORECAST</string>
+</resources>

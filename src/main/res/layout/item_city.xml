@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="110dp"
+    android:layout_margin="8dp"
+    android:background="@color/cardview_light_background"
+    android:clipToPadding="false"
+    android:elevation="5dp"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:textSize="19sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Kyiv" />
+
+    <TextView
+        android:id="@+id/tvConditions"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvTitle"
+        android:layout_marginTop="3dp"
+        android:singleLine="true"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+        tools:text="Ukraine" />
+
+    <TextView
+        android:id="@+id/tvUpdatedAt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvConditions"
+        tools:text="updated" />
+
+    <ImageView
+        android:id="@+id/ivImageWeather"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toStartOf="@+id/tvCurrentTemp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/black"
+        tools:src="@drawable/w00" />
+
+    <TextView
+        android:id="@+id/tvCurrentTemp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="16" />
+
+    <ImageView
+        android:id="@+id/ivDelete"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:alpha=".7"
+        android:background="?android:attr/selectableItemBackgroundBorderless"
+        android:src="@drawable/icon_delete"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:tint="@color/black" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

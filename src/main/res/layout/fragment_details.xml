@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="none">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <TextView
+                android:id="@+id/tvLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Kyiv" />
+
+
+            <TextView
+                android:id="@+id/tvCurrentTemp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="106dp"
+                android:textSize="60sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="25" />
+
+            <TextView
+                android:id="@+id/tvTempMax"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCurrentTemp"
+                tools:text="max 25" />
+
+            <TextView
+                android:id="@+id/tvTempMin"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/tvTempMax"
+                app:layout_constraintTop_toBottomOf="@+id/tvCurrentTemp"
+                tools:text="min 12" />
+
+            <TextView
+                android:id="@+id/tvFeelsLike"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvTempMin"
+                tools:text="@string/fells_like" />
+
+            <TextView
+                android:id="@+id/tvDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/ivImageWeather"
+                app:layout_constraintStart_toStartOf="@+id/ivImageWeather"
+                app:layout_constraintTop_toBottomOf="@+id/ivImageWeather"
+                tools:text="cloudy" />
+
+
+            <ImageView
+                android:id="@+id/ivImageWeather"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+                android:layout_marginTop="96dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/black"
+                tools:src="@drawable/w00" />
+
+
+            <LinearLayout
+                android:id="@+id/detailsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="45dp"
+                android:orientation="vertical"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike">
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="10dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="4">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="3dp">
+
+                        <TextView
+                            android:id="@+id/tvHumidityName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/humidity"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvHumidityValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="3dp">
+
+                        <TextView
+                            android:id="@+id/tvPressureName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/pressure"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvPressureValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="3dp">
+
+                        <TextView
+                            android:id="@+id/tvWindName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/wind"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvWindValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="1dp"
+                        android:layout_height="fill_parent"
+                        android:background="@color/black" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="3dp">
+
+                        <TextView
+                            android:id="@+id/tvCloudCoverName"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/cloud_cover"
+                            android:textSize="12sp" />
+
+                        <TextView
+                            android:id="@+id/tvCloudCoverValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="14sp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDaily"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/daily_forecast"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/detailsContainer" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvDaily"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvDaily" />
+
+            <TextView
+                android:id="@+id/tvHourly"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/hourly_forecast"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/rvDaily" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvHourly"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvHourly" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</FrameLayout>
