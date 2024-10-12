@@ -15,16 +15,15 @@ import com.example.testweather.util.loadImage
 import com.example.testweather.util.roundValue
 
 class DailyForecastAdapter(
-) : RecyclerView.Adapter<DailyForecastAdapter.DailyForecastViewHolder>() {
+) : RecyclerView.Adapter<DailyForecastAdapter.DailyViewHolder>() {
     private var currentList = emptyList<WeatherData>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DailyForecastViewHolder {
-        return DailyForecastViewHolder.create(parent)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DailyViewHolder =
+        DailyViewHolder.create(parent)
 
     override fun getItemCount() = currentList.size
 
-    override fun onBindViewHolder(holder: DailyForecastViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: DailyViewHolder, position: Int) {
         holder.bind(currentList[position])
     }
 
@@ -33,7 +32,7 @@ class DailyForecastAdapter(
         notifyDataSetChanged()
     }
 
-    class DailyForecastViewHolder(
+    class DailyViewHolder(
         private val binding: ItemDailyBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -48,11 +47,7 @@ class DailyForecastAdapter(
                 )
                 ivImageWeather.apply {
                     Glide.with(context)
-                        .load(
-                            context.loadImage(
-                                item.weather?.first()?.icon?.iconMapper().orEmpty()
-                            )
-                        )
+                        .load(context.loadImage(item.weather?.first()?.icon?.iconMapper().orEmpty()))
                         .into(this)
                 }
             }
@@ -62,9 +57,7 @@ class DailyForecastAdapter(
 
             fun create(
                 parent: ViewGroup,
-            ): DailyForecastViewHolder {
-                return DailyForecastViewHolder(getViewBinding(parent))
-            }
+            ): DailyViewHolder = DailyViewHolder(getViewBinding(parent))
 
             private fun getViewBinding(parent: ViewGroup): ItemDailyBinding {
                 return ItemDailyBinding.inflate(

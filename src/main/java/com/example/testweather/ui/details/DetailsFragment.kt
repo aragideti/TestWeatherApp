@@ -68,6 +68,7 @@ class DetailsFragment : DialogFragment() {
             layoutManager = LinearLayoutManager(
                 requireContext(), LinearLayoutManager.VERTICAL, false
             )
+            overScrollMode = View.OVER_SCROLL_NEVER
             adapter = dailyForecastAdapter
         }
     }
@@ -77,6 +78,7 @@ class DetailsFragment : DialogFragment() {
             layoutManager = LinearLayoutManager(
                 requireContext(), LinearLayoutManager.VERTICAL, false
             )
+            overScrollMode = View.OVER_SCROLL_NEVER
             adapter = hourlyForecastAdapter
         }
     }

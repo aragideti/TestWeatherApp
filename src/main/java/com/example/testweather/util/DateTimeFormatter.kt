@@ -17,6 +17,6 @@ object DateTimeFormatter {
 enum class DateFormats(val format: String) {
     DAYWEEK_DAY_MONTH_TIME("EEEE\ndd MMMM HH:mm"),
     DAYWEEK_DAY_MONTH("EEEE, dd MMMM"),
-    DAYWEEK_DAY_MONTH_HOURS("EEEE dd MMMM\nHH:mm"),
+    DAYWEEK_DAY_MONTH_HOURS("EEEE, dd MMMM\nHH:mm"),
 
 }

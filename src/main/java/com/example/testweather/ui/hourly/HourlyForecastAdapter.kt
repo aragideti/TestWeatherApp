@@ -15,16 +15,15 @@ import com.example.testweather.util.loadImage
 import com.example.testweather.util.roundValue
 
 class HourlyForecastAdapter(
-) : RecyclerView.Adapter<HourlyForecastAdapter.HourlyForecastAdapter>() {
+) : RecyclerView.Adapter<HourlyForecastAdapter.HourlyViewHolder>() {
     private var currentList = emptyList<WeatherItem>()
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HourlyForecastAdapter {
-        return HourlyForecastAdapter.create(parent)
-    }
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HourlyViewHolder =
+        HourlyViewHolder.create(parent)
 
     override fun getItemCount() = currentList.size
 
-    override fun onBindViewHolder(holder: HourlyForecastAdapter, position: Int) {
+    override fun onBindViewHolder(holder: HourlyViewHolder, position: Int) {
         holder.bind(currentList[position])
     }
 
@@ -33,7 +32,7 @@ class HourlyForecastAdapter(
         notifyDataSetChanged()
     }
 
-    class HourlyForecastAdapter(
+    class HourlyViewHolder(
         private val binding: ItemHourlyBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
@@ -56,9 +55,7 @@ class HourlyForecastAdapter(
 
             fun create(
                 parent: ViewGroup,
-            ): HourlyForecastAdapter {
-                return HourlyForecastAdapter(getViewBinding(parent))
-            }
+            ): HourlyViewHolder = HourlyViewHolder(getViewBinding(parent))
 
             private fun getViewBinding(parent: ViewGroup): ItemHourlyBinding {
                 return ItemHourlyBinding.inflate(

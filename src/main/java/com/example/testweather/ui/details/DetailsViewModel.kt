@@ -27,7 +27,6 @@ class DetailsViewModel @Inject constructor(
     private val _error = MutableLiveData<String>()
     val error: LiveData<String> = _error
 
-
     fun fetchDailyForecast(lat: String, lon: String) {
         viewModelScope.launch {
             performRequest(
