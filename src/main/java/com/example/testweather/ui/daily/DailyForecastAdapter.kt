@@ -3,6 +3,8 @@ package com.example.testweather.ui.daily
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.testweather.R
@@ -14,22 +16,13 @@ import com.example.testweather.util.iconMapper
 import com.example.testweather.util.loadImage
 import com.example.testweather.util.roundValue
 
-class DailyForecastAdapter(
-) : RecyclerView.Adapter<DailyForecastAdapter.DailyViewHolder>() {
-    private var currentList = emptyList<WeatherData>()
+class DailyForecastAdapter : ListAdapter<WeatherData, DailyForecastAdapter.DailyViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DailyViewHolder =
         DailyViewHolder.create(parent)
 
-    override fun getItemCount() = currentList.size
-
     override fun onBindViewHolder(holder: DailyViewHolder, position: Int) {
         holder.bind(currentList[position])
-    }
-
-    fun submitList(data: List<WeatherData>) {
-        currentList = data
-        notifyDataSetChanged()
     }
 
     class DailyViewHolder(
@@ -66,6 +59,22 @@ class DailyForecastAdapter(
                     false
                 )
             }
+        }
+    }
+
+    companion object {
+
+        private val DIFF_UTIL = object : DiffUtil.ItemCallback<WeatherData>() {
+
+            override fun areItemsTheSame(
+                oldItem: WeatherData,
+                newItem: WeatherData
+            ): Boolean = oldItem.dt == newItem.dt
+
+            override fun areContentsTheSame(
+                oldItem: WeatherData,
+                newItem: WeatherData
+            ): Boolean = oldItem == newItem
         }
     }
 }

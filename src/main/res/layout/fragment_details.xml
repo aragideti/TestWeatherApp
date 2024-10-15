@@ -60,6 +60,7 @@
                 android:id="@+id/tvFeelsLike"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:paddingBottom="45dp"
                 android:textSize="14sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTempMin"
@@ -85,118 +86,106 @@
                 app:tint="@color/black"
                 tools:src="@drawable/w00" />
 
-            <LinearLayout
-                android:id="@+id/detailsContainer"
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/tvHumidityName"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="45dp"
-                android:orientation="horizontal"
-                android:weightSum="4"
-                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike">
+                android:text="@string/humidity"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvPressureName"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="3dp">
+            <TextView
+                android:id="@+id/tvHumidityValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvHumidityName"
+                app:layout_constraintStart_toStartOf="@+id/tvHumidityName"
+                app:layout_constraintTop_toBottomOf="@+id/tvHumidityName" />
 
-                    <TextView
-                        android:id="@+id/tvHumidityName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/humidity"
-                        android:textSize="12sp" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="36dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tvPressureName"
+                app:layout_constraintStart_toEndOf="@id/tvHumidityName"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike" />
 
-                    <TextView
-                        android:id="@+id/tvHumidityValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp" />
-                </LinearLayout>
+            <TextView
+                android:id="@+id/tvPressureName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pressure"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvWindName"
+                app:layout_constraintStart_toEndOf="@+id/tvHumidityName"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="fill_parent"
-                    android:background="@color/black" />
+            <TextView
+                android:id="@+id/tvPressureValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvPressureName"
+                app:layout_constraintStart_toStartOf="@+id/tvPressureName"
+                app:layout_constraintTop_toBottomOf="@+id/tvPressureName" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="3dp">
+            <View
+                android:layout_width="1dp"
+                android:layout_height="36dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tvWindValue"
+                app:layout_constraintStart_toEndOf="@id/tvPressureValue"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike" />
 
-                    <TextView
-                        android:id="@+id/tvPressureName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/pressure"
-                        android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tvWindName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/wind"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/tvCloudCoverName"
+                app:layout_constraintStart_toEndOf="@+id/tvPressureName"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike" />
 
-                    <TextView
-                        android:id="@+id/tvPressureValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp" />
-                </LinearLayout>
+            <TextView
+                android:id="@+id/tvWindValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvWindName"
+                app:layout_constraintStart_toStartOf="@+id/tvWindName"
+                app:layout_constraintTop_toBottomOf="@+id/tvWindName" />
 
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="fill_parent"
-                    android:background="@color/black" />
+            <View
+                android:layout_width="1dp"
+                android:layout_height="36dp"
+                android:background="@color/black"
+                app:layout_constraintEnd_toStartOf="@+id/tvCloudCoverName"
+                app:layout_constraintStart_toEndOf="@id/tvWindValue"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike" />
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="3dp">
+            <TextView
+                android:id="@+id/tvCloudCoverName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/cloud_cover"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/tvWindName"
+                app:layout_constraintTop_toBottomOf="@+id/tvFeelsLike" />
 
-                    <TextView
-                        android:id="@+id/tvWindName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/wind"
-                        android:textSize="12sp" />
+            <TextView
+                android:id="@+id/tvCloudCoverValue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@+id/tvCloudCoverName"
+                app:layout_constraintStart_toStartOf="@+id/tvCloudCoverName"
+                app:layout_constraintTop_toBottomOf="@+id/tvCloudCoverName" />
 
-                    <TextView
-                        android:id="@+id/tvWindValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp" />
-                </LinearLayout>
-
-                <View
-                    android:layout_width="1dp"
-                    android:layout_height="fill_parent"
-                    android:background="@color/black" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:orientation="vertical"
-                    android:padding="3dp">
-
-                    <TextView
-                        android:id="@+id/tvCloudCoverName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/cloud_cover"
-                        android:textSize="12sp" />
-
-                    <TextView
-                        android:id="@+id/tvCloudCoverValue"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="14sp" />
-                </LinearLayout>
-            </LinearLayout>
 
             <TextView
                 android:id="@+id/tvDaily"
@@ -206,13 +195,14 @@
                 android:text="@string/daily_forecast"
                 android:textSize="12sp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detailsContainer" />
+                app:layout_constraintTop_toBottomOf="@+id/tvCloudCoverValue" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rvDaily"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvDaily" />

@@ -3,6 +3,8 @@ package com.example.testweather.ui.cities
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.testweather.R
@@ -16,22 +18,14 @@ import com.example.testweather.util.roundValue
 
 class CitiesListAdapter(
     private val customClickListener: CustomClickListener
-) : RecyclerView.Adapter<CitiesListAdapter.CitiesListViewHolder>() {
-    private var currentList = emptyList<CurrentWeatherRS>()
+) : ListAdapter<CurrentWeatherRS, CitiesListAdapter.CitiesListViewHolder>(DIFF_UTIL) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CitiesListViewHolder {
         return CitiesListViewHolder.create(parent, customClickListener)
     }
 
-    override fun getItemCount() = currentList.size
-
     override fun onBindViewHolder(holder: CitiesListViewHolder, position: Int) {
         holder.bind(currentList[position])
-    }
-
-    fun submitList(data: List<CurrentWeatherRS>) {
-        currentList = data
-        notifyDataSetChanged()
     }
 
     class CitiesListViewHolder(
@@ -86,6 +80,23 @@ class CitiesListAdapter(
                     false
                 )
             }
+        }
+    }
+
+    companion object {
+
+        private val DIFF_UTIL = object : DiffUtil.ItemCallback<CurrentWeatherRS>() {
+
+            override fun areItemsTheSame(
+                oldItem: CurrentWeatherRS,
+                newItem: CurrentWeatherRS
+            ): Boolean = oldItem.id == newItem.id
+
+            override fun areContentsTheSame(
+                oldItem: CurrentWeatherRS,
+                newItem: CurrentWeatherRS
+            ): Boolean = oldItem == newItem
+
         }
     }
 }

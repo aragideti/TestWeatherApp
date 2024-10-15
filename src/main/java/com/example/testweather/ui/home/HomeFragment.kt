@@ -56,8 +56,8 @@ class HomeFragment : Fragment(), CustomClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initUI()
-        observeViewModel()
         bindAdapter()
+        observeViewModel()
     }
 
     private fun bindAdapter() {
@@ -95,7 +95,7 @@ class HomeFragment : Fragment(), CustomClickListener {
 
     private fun observeViewModel() {
         viewModel.currentWeather.observe(viewLifecycleOwner) { citiesList ->
-            citiesListAdapter.submitList(citiesList)
+            citiesListAdapter.submitList(citiesList.toList())
             buttonsVisibility(citiesList.isEmpty())
         }
         viewModel.error.observe(viewLifecycleOwner) { error ->
