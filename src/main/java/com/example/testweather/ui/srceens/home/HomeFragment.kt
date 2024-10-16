@@ -1,4 +1,4 @@
-package com.example.testweather.ui.home
+package com.example.testweather.ui.srceens.home
 
 import android.app.Activity.RESULT_OK
 import android.os.Bundle
@@ -15,7 +15,7 @@ import com.example.testweather.databinding.FragmentHomeBinding
 import com.example.testweather.domain.entity.CurrentWeatherRS
 import com.example.testweather.ui.cities.CitiesListAdapter
 import com.example.testweather.ui.cities.CustomClickListener
-import com.example.testweather.ui.details.DetailsFragment
+import com.example.testweather.ui.srceens.details.DetailsFragment
 import com.example.testweather.util.showErrorDialog
 import com.google.android.libraries.places.api.Places
 import com.google.android.libraries.places.api.model.Place

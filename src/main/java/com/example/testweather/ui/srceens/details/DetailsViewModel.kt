@@ -1,4 +1,4 @@
-package com.example.testweather.ui.details
+package com.example.testweather.ui.srceens.details
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -7,7 +7,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.testweather.domain.repository.WeatherRepository
 import com.example.testweather.domain.entity.DailyForecastRS
 import com.example.testweather.domain.entity.HourlyForecastRS
-import com.example.testweather.ui.home.HomeViewModel.Companion.DEFAULT_ERROR_MESSAGE
+import com.example.testweather.ui.srceens.home.HomeViewModel.Companion.DEFAULT_ERROR_MESSAGE
 import com.example.testweather.util.performRequest
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

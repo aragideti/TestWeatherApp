@@ -1,4 +1,4 @@
-package com.example.testweather.ui.home
+package com.example.testweather.ui.srceens.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

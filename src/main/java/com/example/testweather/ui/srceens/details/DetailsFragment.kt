@@ -1,4 +1,4 @@
-package com.example.testweather.ui.details
+package com.example.testweather.ui.srceens.details
 
 import android.app.Dialog
 import android.os.Bundle
